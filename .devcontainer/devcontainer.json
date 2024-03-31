@@ -1,0 +1,54 @@
+{
+    "name": "vision_demos",
+    "workspaceFolder": "/workspaces/vision_ws",
+    "image": "gazebo:humble",
+    "remoteUser": "user",
+    "runArgs": [
+        "--hostname=dev",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+        // "--net=host"
+    ],
+    "containerEnv": {
+        // "RMW_IMPLEMENTATION": "rmw_cyclonedds_cpp",
+		"DISPLAY": "${localEnv:DISPLAY}" // Needed for GUI try ":0" for windows
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.analysis.extraPaths": [
+                    "/opt/ros/humble/lib/python3.10/site-packages/",
+                    "install/local/lib/python3.10/dist-packages",
+                    "/usr/lib/python3/dist-packages/"
+                ],
+                // Autocomplete from ros python packages
+                "python.autoComplete.extraPaths": [
+                    "/opt/ros/humble/lib/python3.10/site-packages/"
+                ],
+                "search.exclude": {
+                    "**/build": true,
+                    "**/install": true,
+                    "**/log": true
+                },
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/*/**": true,
+                    "**/.hg/store/**": true,
+                    "**/build/**": true,
+                    "**/log/**": true,
+                    "**/install/**": true
+                }
+            },
+            "extensions": [
+				"DotJoshJohnson.xml",
+				"ms-python.python",
+				"ms-vscode.cpptools",
+				"redhat.vscode-yaml",
+				"streetsidesoftware.code-spell-checker",
+				"twxs.cmake",
+				"yzhang.markdown-all-in-one",
+                "albert.TabOut"
+            ]
+        }
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "src/vision_py/modules/visual_trackers"]
+	path = src/vision_py/modules/visual_trackers
+	url = /home/user/projects/visual_trackers/

@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "src/vision_py/modules/visual_trackers/**"
+    ]
+}
